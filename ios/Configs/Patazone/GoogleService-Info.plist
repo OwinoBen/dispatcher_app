@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>427851626423-q79kpd82dnavi782n5k9ac84si6c9ham.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.427851626423-q79kpd82dnavi782n5k9ac84si6c9ham</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBlCL1-x3wj8EZMDHC5tLfiDN4U-PApy8c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>427851626423</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.patazone.dispatcher</string>
+	<key>PROJECT_ID</key>
+	<string>patazone-driver-a6d7f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>patazone-driver-a6d7f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:427851626423:ios:e746bddd6a915eea3e1a32</string>
+</dict>
+</plist>

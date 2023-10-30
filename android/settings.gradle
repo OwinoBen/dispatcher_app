@@ -1,0 +1,14 @@
+rootProject.name = 'RoyoDriverApp'
+include ':rn-fetch-blob'
+project(':rn-fetch-blob').projectDir = new File(rootProject.projectDir, '../node_modules/rn-fetch-blob/android')
+include ':react-native-splash-screen'
+project(':react-native-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-splash-screen/android')
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app', ':react-native-code-push'
+project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-code-push/android/app')
+include ':@hariks789_react-native-background-geolocation-common'
+project(':@hariks789_react-native-background-geolocation-common').projectDir = new File(rootProject.projectDir, '../node_modules/@hariks789/react-native-background-geolocation/android/common')
+include ':@hariks789_react-native-background-geolocation'
+project(':@hariks789_react-native-background-geolocation').projectDir = new File(rootProject.projectDir, '../node_modules/@hariks789/react-native-background-geolocation/android/lib')
+include ':react-native-video'
+project(':react-native-video').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-video/android-exoplayer')

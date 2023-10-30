@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "427851626423",
+    "project_id": "patazone-driver-a6d7f",
+    "storage_bucket": "patazone-driver-a6d7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427851626423:android:a4b6eceefa9c39543e1a32",
+        "android_client_info": {
+          "package_name": "com.patazone.dispatcher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427851626423-405h5u2ajvgjvvjmr5o4lespf56h0sqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-1giRN1EknBBvcaEVfHzASe6AR8Eu8Ho"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427851626423-405h5u2ajvgjvvjmr5o4lespf56h0sqs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "427851626423-q79kpd82dnavi782n5k9ac84si6c9ham.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.patazone.dispatcher"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

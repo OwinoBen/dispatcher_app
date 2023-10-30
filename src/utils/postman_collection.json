@@ -1,0 +1,1807 @@
+{
+	"info": {
+		"_postman_id": "4b994e38-85fb-4786-80a8-1b2b8a815b81",
+		"name": "Royo Dispatch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23011988"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Check Short Codes",
+					"endpoint": "api/shortCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "shortCode",
+									"value": "b8f2f4",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{URL}}/api/shortCode",
+						"description": "get company by short code"
+					},
+					"response": []
+				},
+				{
+					"name": "Send OTP",
+					"endpoint": "api/auth/sendOtp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"description": " this is the database_name which return in get short codes api",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone_number\": \"+914563210231\"\n}"
+						},
+						"url": "{{URL}}/api/auth/sendOtp"
+					},
+					"response": []
+				},
+				{
+					"name": "Signup Api",
+					"endpoint": "api/auth/signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"description": " this is the database_name which return in get short codes api",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "userAgenet",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "234234233243",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "freenalcer",
+									"type": "text"
+								},
+								{
+									"key": "make_model",
+									"value": "234324",
+									"type": "text"
+								},
+								{
+									"key": "plate_number",
+									"value": "233232",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "red",
+									"type": "text"
+								},
+								{
+									"key": "vehicle_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "team_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "tags",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "otp",
+									"value": "871245",
+									"type": "text"
+								},
+								{
+									"key": "profile_picture",
+									"type": "file",
+									"src": "rWmjJcCnU/Screenshot 2022-10-17 at 2.45.46 PM.png"
+								}
+							]
+						},
+						"url": "{{URL}}/api/auth/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"endpoint": "api/auth/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone_number\": \"+914563210231\",\n    \"otp\": \"652888\",\n    \"device_type\": \"Android\",\n    \"device_token\": \"h78whwyyvfv98vvhvhvhvhrhvhevhervhervhy\"\n}"
+						},
+						"url": "{{URL}}/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Driver OTP",
+					"endpoint": "api/checkOTPRequried",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task_id\": \"23\"\n}"
+						},
+						"url": "{{URL}}/api/checkOTPRequried"
+					},
+					"response": []
+				},
+				{
+					"name": "Agent Delete",
+					"endpoint": "api/agent/delete",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{URL}}/api/agent/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout Api",
+					"endpoint": "api/auth/logout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/auth/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "Get CMS Detail By ID",
+					"endpoint": "api/cmscontent",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/cmscontent?cms_id=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"cmscontent"
+							],
+							"query": [
+								{
+									"key": "cms_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Documents While Sign Up",
+					"endpoint": "api/auth/new-send-documents",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "client",
+								"value": "grub",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/auth/new-send-documents",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"new-send-documents"
+							],
+							"query": [
+								{
+									"key": "client",
+									"value": "grub",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send OTP Signup",
+					"endpoint": "api/auth/signup/sendOtp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "client",
+								"value": "grub",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"app_hash_key\": \"jkldhfkghlkjgh\",\n\"dial_code\":\"91\",\n\"phone_number\": \"9602511851\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/api/auth/signup/sendOtp"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Activity",
+			"item": [
+				{
+					"name": "Update Availibility Status",
+					"endpoint": "api/updateStatus",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/updateStatus"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order List",
+					"endpoint": "api/taskList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/taskList?all=0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"taskList"
+							],
+							"query": [
+								{
+									"key": "all",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task Status",
+					"endpoint": "api/updateTaskStatus",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "task_status",
+									"value": "3",
+									"description": "2 for in-progress, 3 for completed ,4 = failded",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "hdfbgjhdfbsdjfhbshj",
+									"description": "if have",
+									"type": "text"
+								},
+								{
+									"key": "task_id",
+									"value": "1467",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/cbl-pc-045/Downloads/index.jpeg"
+								},
+								{
+									"key": "signature",
+									"type": "file",
+									"src": "/home/cbl-pc-045/Downloads/131503004_755607315028554_476946633395503079_n.png"
+								}
+							]
+						},
+						"url": "{{URL}}/api/updateTaskStatus"
+					},
+					"response": []
+				},
+				{
+					"name": "Accept And Reject Task",
+					"endpoint": "api/task/accecpt/reject",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "order_id",
+									"value": "318",
+									"type": "text"
+								},
+								{
+									"key": "driver_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"description": "1 for accecpt ,2 for reject",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{URL}}/api/task/accecpt/reject"
+					},
+					"response": []
+				},
+				{
+					"name": "Agent Logs",
+					"endpoint": "api/agent/logs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "lat",
+									"value": "32.021230",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "75.023210",
+									"type": "text"
+								},
+								{
+									"key": "battery_level",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "os_version",
+									"value": "8.0",
+									"type": "text"
+								},
+								{
+									"key": "app_version",
+									"value": "1.0",
+									"type": "text"
+								},
+								{
+									"key": "current_speed",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "on_route",
+									"value": "0",
+									"description": "1 or 0",
+									"type": "text"
+								},
+								{
+									"key": "device_type",
+									"value": "IOS",
+									"type": "text"
+								},
+								{
+									"key": "all",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{URL}}/api/agent/logs"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Agent Profile",
+					"endpoint": "/api/get/profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/get/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Agent Profile",
+					"endpoint": "/api/update/profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Agent Cool",
+									"type": "text"
+								},
+								{
+									"key": "profile_picture",
+									"description": "image( type file)",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "vehicle_type_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "make_model",
+									"value": "2014",
+									"description": "vehicle model year",
+									"type": "text"
+								},
+								{
+									"key": "plate_number",
+									"value": "RJ14-YB-1441",
+									"description": "vehicle_number",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "9638527410",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "red",
+									"description": "vehicle_color",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{URL}}/api/update/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Task History",
+					"endpoint": "api/task/history",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/task/history"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "Create Task",
+					"endpoint": "/api/public/task/create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task_dispatch\":\"now\",\n    \"schedule_time\":\"\",\n    \"customer_name\":\"customer\",\n    \"customer_email\":\"customer@gmail.com\",\n    \"customer_phone_number\":\"9638527410\",\n    \"recipient_phone\":\"9632541020\",\n    \"recipient_email\":\"home@gmail.com\",\n    \"task_description\":\"fhkhsfkhsdf\",\n    \"cash_to_be_collected\":200.50,\n    \"allocation_type\":\"a\",\n     \"task\": [\n            {\n               \"task_type_id\":1,\n               \"appointment_duration\":null,\n               \"short_name\":\"home\",\n               \"address\":\"house-no12,chandigarh,sector-42\",\n               \"latitude\":\"30.25623\",\n               \"longitude\":\"75.021230\",\n               \"post_code\":\"222300\",\n               \"barcode\":\"98kjhyk\"\n            }\n        ]\n}"
+						},
+						"url": "{{URL}}/api/public/task/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Reimbursement",
+					"endpoint": "api/agent/create/reimbursement",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{URL}}/api/agent/create/reimbursement"
+					},
+					"response": []
+				},
+				{
+					"name": "Task Current Status",
+					"endpoint": "/api/public/task/currentstatus",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/public/task/currentstatus?task_id=182",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"public",
+								"task",
+								"currentstatus"
+							],
+							"query": [
+								{
+									"key": "task_id",
+									"value": "182"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get List Of All Cancel Reason",
+					"endpoint": "api/order/cancel/reasons",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/order/cancel/reasons"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Damage Types",
+					"endpoint": "api/damagetypes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/damagetypes"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reimbursement Types",
+					"endpoint": "api/reimbursementtypes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/reimbursementtypes"
+					},
+					"response": []
+				},
+				{
+					"name": "Custom Notification Data",
+					"endpoint": "api/notification/tracking",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/notification/tracking/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Agent Slots",
+					"endpoint": "/api/agent/check_slot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "personaltoken",
+								"value": "icDerSAVT4Fd795DgPsPfONXahhTOA"
+							},
+							{
+								"key": "shortcode",
+								"value": "745e3f"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"latitude\":\"30.718784900000\",\n\"longitude\":\"76.810374100000\",\n\"tags\":\"RoyoPlatinum\",\n\"schedule_date\":\"2022-09-15\",\n\"service_time\":\"30\"\n}"
+						},
+						"url": "http://127.0.0.1:8000/api/agent/check_slot"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Order",
+					"endpoint": "api/order/cancel/request/create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"reject_reason\":\"dsfdfdf\"\n}"
+						},
+						"url": "{{URL}}/api/order/cancel/request/create/32"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "Wallet Credit",
+					"endpoint": "api/agentWallet/credit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\":\"100\",\n    \"transaction_id\":\"32432423234fefs\"\n    \n}"
+						},
+						"url": "{{URL}}/api/agentWallet/credit"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Wallet Data",
+					"endpoint": "api/agent/transaction/details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{URL}}/api/agent/transaction/details"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payout",
+			"item": [
+				{
+					"name": "Agent Payout",
+					"endpoint": "api/agent/payout/request/create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\":\"100\",\n   \"payout_option_id\":\"1\"\n    \n}"
+						},
+						"url": "{{URL}}/api/agent/payout/request/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Agent Payout Details",
+					"endpoint": "api/agent/payout/details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{URL}}/api/agent/payout/details"
+					},
+					"response": []
+				},
+				{
+					"name": "Agent Bank Details",
+					"endpoint": "api/agent/bank/details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{URL}}/api/agent/bank/details"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Payment Options",
+					"endpoint": "api/payment/options",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/payment/options"
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Web URL",
+					"endpoint": "api/payment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/payment/PAYMENT_METHOD_NAME?amount=100&payment_option_id=10&order_number=42423&token=PAYMENT_TOKEN&action=cart`",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"payment",
+								"PAYMENT_METHOD_NAME"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "100"
+								},
+								{
+									"key": "payment_option_id",
+									"value": "10"
+								},
+								{
+									"key": "order_number",
+									"value": "42423"
+								},
+								{
+									"key": "token",
+									"value": "PAYMENT_TOKEN"
+								},
+								{
+									"key": "action",
+									"value": "cart`"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Chat",
+			"item": [
+				{
+					"name": "Start Chat",
+					"endpoint": "/api/v1/chat/startChat",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "language",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "currency",
+								"value": "USD",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"sub_domain\":\"192.168.101.88\",\n    \"client_id\":1,\n    \"db_name\":\"salesdemo\",\n    \"user_id\":\"133\",\n    \"type\":\"agent-to-user\",\n    \"order_vendor_id\":2,\n    \"vendor_id\":3,\n    \"order_id\":5\n}\n"
+						},
+						"url": "{{URL}}/api/v1/chat/startChat"
+					},
+					"response": []
+				},
+				{
+					"name": "Agent Chat Room",
+					"endpoint": "/api/room/fetchRoomByUserAgent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "language",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "currency",
+								"value": "USD",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"sub_domain\":\"192.168.101.88\",\n    \"agent_db\":\"salesdemo\",\n    \"agent_id\":\"133\",\n    \"type\":\"agent-to-user\",\n    \"client_id\":5\n}\n"
+						},
+						"url": "{{URL}}/api/room/fetchRoomByUserAgent"
+					},
+					"response": []
+				},
+				{
+					"name": "Send Notification To User",
+					"endpoint": "/api/v1/chat/sendNotification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "language",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "currency",
+								"value": "USD",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"user_ids\":[],\n    \"roomId\":1,\n    \"roomIdText\":\"salesdemo\",\n    \"text_message\":\"133\",\n    \"chat_type\":\"agent-to-user\",\n    \"order_vendor_id\":2,\n    \"vendor_id\":3,\n    \"order_id\":5,\n    \"all_agentids\":[],\n    \"username\":\"salesDemo\",\n    \"auth_id\":8\n}\n"
+						},
+						"url": "{{URL}}/api/v1/chat/sendNotification"
+					},
+					"response": []
+				},
+				{
+					"name": "Send Message",
+					"endpoint": "/api/chat/sendMessageJoin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "language",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "currency",
+								"value": "USD",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n    \"user_ids\":[],\n    \"roomId\":1,\n    \"roomIdText\":\"salesdemo\",\n    \"text_message\":\"133\",\n    \"chat_type\":\"agent-to-user\",\n    \"order_vendor_id\":2,\n    \"vendor_id\":3,\n    \"order_id\":5,\n    \"all_agentids\":[],\n    \"username\":\"salesDemo\",\n    \"auth_id\":8\n}\n"
+						},
+						"url": "https://chat.royodispatch.com/api/chat/sendMessageJoin"
+					},
+					"response": []
+				},
+				{
+					"name": "Gel All Messages",
+					"endpoint": "/api/chat",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "language",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "currency",
+								"value": "USD",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "https://chat.royodispatch.com/api/chat/133"
+					},
+					"response": []
+				},
+				{
+					"name": "All Room User",
+					"endpoint": "/api/chat/getRoomUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "language",
+								"value": "1",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "currency",
+								"value": "USD",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "https://chat.royodispatch.com/api/chat/getRoomUser/5"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscripations",
+			"item": [
+				{
+					"name": "Get All Subscription Plans",
+					"endpoint": "api/driver/subscription/plans",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{client}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/driver/subscription/plans"
+					},
+					"response": []
+				},
+				{
+					"name": "Select Specific Plan",
+					"endpoint": "api/driver/subscription/selectPlan",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "client",
+								"value": "{{CLIENT}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							}
+						],
+						"url": "{{URL}}/api/driver/subscription/selectPlan"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Specific Plan",
+					"endpoint": "api/driver/subscription/cancel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Authorization}}",
+								"type": "text"
+							},
+							{
+								"key": "code",
+								"value": "{{code}}",
+								"type": "text"
+							},
+							{
+								"key": "language",
+								"value": "1",
+								"type": "text"
+							},
+							{
+								"key": "currency",
+								"value": "USD",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{URL}}/api/driver/subscription/cancel"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
